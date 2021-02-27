@@ -1,0 +1,45 @@
+<div class=" container py-5">
+
+    <input type="text" [(ngModel)]='term'  name="" id="" placeholder=" search"  class=" form-control w-75 mx-auto my-5" >
+  
+    <div class="row">
+        <div class="col-md-4">
+
+            <div>
+                <div class="brdr w-25 mb-3"></div>
+                <h3>Trendin <br> movies <br> to watch now</h3> 
+     
+                 <p class=" py-2 title">most watched movies by days</p>
+                <div class="brdr w-100"></div>
+            </div>
+        </div>
+        <div *ngFor="let movie of nowPlayingMovies|search:term" class="col-md-2 mb-3">
+              <div [routerLink]="['movieDetails', movie.id]" class="movie position-relative rounded">
+                  <img [src]="'https://image.tmdb.org/t/p/w500'+ movie.poster_path" class="w-100 rounded" alt="">
+                  <h4 class=" h6 py-1">{{movie.original_title}}</h4>
+                  <p class="position-absolute p-1 rounded">{{movie.vote_average}}</p>
+                  
+              </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+
+            <div>
+                <div class="brdr w-25 mb-3"></div>
+                <h3>Trendin <br> Tv <br> to watch now</h3> 
+     
+                 <p class=" py-2 title">most watched movies by days</p>
+                <div class="brdr w-100"></div>
+            </div>
+        </div>
+        <div *ngFor="let movie of trendingTv|search:term" class="col-md-2 mb-3">
+              <div [routerLink]="['movieDetails', movie.id]" class="movie position-relative rounded">
+                  <img [src]="'https://image.tmdb.org/t/p/w500'+ movie.poster_path" class="w-100 rounded" alt="">
+                  <h4 class=" h6 py-1">{{movie.original_title}}{{movie.name}}</h4>
+                  <p class="position-absolute p-1 rounded">{{movie.vote_average}}</p>
+                  
+              </div>
+        </div>
+    </div>
+</div>

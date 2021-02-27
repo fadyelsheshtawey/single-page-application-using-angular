@@ -1,0 +1,30 @@
+$bgColor:#131722;
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
+$fontColor:#fff;
+$borderColor:#a8a8a83d;
+$borderHeight:1px;
+$secondFontColor:#949cb0;
+
+.col-md-4{
+    color: $fontColor ;
+}
+.title{
+    font-size: .9rem;
+    color: $secondFontColor;
+    background-color: transparent;
+}
+.brdr{
+   border-top: $borderHeight solid $borderColor;
+
+}
+h4{
+    color: $fontColor ;
+
+}
+p{
+    top: 0;
+    right: 0;
+    color: $fontColor;
+    background-color: $bgTransparent;
+}

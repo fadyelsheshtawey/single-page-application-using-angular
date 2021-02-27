@@ -1,0 +1,55 @@
+<div class="container py-5 d-flex flex-column justify-content-center ">
+    <p class=" mt-5 mb-4 h3 text-white">Registration Form</p>
+
+    <p *ngIf='message' class=" alert alert-danger">
+        {{message}}
+
+    </p>
+    <form action="" [formGroup]="registerForm" (ngSubmit)='submitForm(registerForm)'>
+
+        
+            <label for="">Firstname:</label>
+            <input type="text" class=" form-control" formControlName="first_name" >
+            <div *ngIf='registerForm.controls.first_name.errors && registerForm.controls.first_name.touched'>
+                <p *ngIf='registerForm.controls.first_name.errors?.maxlength' class=" alert mb-0 alert-danger">the max length is 15 </p>
+                <p  *ngIf='registerForm.controls.first_name.errors?.minlength' class=" alert mb-0 alert-danger">the min length  is 4</p>
+                <p *ngIf='registerForm.controls.first_name.errors?.required' class=" alert mb-0 alert-danger">you must enter vaild name</p>
+                <p *ngIf='registerForm.controls.first_name.errors?.pattern' class=" alert mb-0 alert-danger">you must enter vaild data</p>
+            </div>
+    
+        
+            <label for="" class="mt-4">Lastname:</label>
+            <input type="text" class="form-control" formControlName="last_name">
+            <div *ngIf='registerForm.controls.last_name.errors && registerForm.controls.last_name.touched'>
+                <p *ngIf='registerForm.controls.last_name.errors?.maxlength' class=" alert mb-0 alert-danger">the max length is 15 </p>
+                <p  *ngIf='registerForm.controls.last_name.errors?.minlength' class=" alert mb-0 alert-danger">the min length  is 4</p>
+                <p *ngIf='registerForm.controls.last_name.errors?.required' class=" alert mb-0 alert-danger">you must enter vaild name</p>
+                <p *ngIf='registerForm.controls.last_name.errors?.pattern' class=" alert mb-0 alert-danger">you must enter vaild data</p>
+            </div>
+
+        
+            <label for="" class="mt-4">Age:</label>
+            <input type="number" class="form-control" formControlName="age">
+            <div *ngIf='registerForm.controls.age.errors && registerForm.controls.age.touched'>
+                <p *ngIf='registerForm.controls.age.errors?.max' class=" alert mb-0 alert-danger">your age must be less than 90</p>
+                <p *ngIf='registerForm.controls.age.errors?.min' class=" alert mb-0 alert-danger">your age must be more than 10</p>
+                <p *ngIf='registerForm.controls.age.errors.required' class=" alert mb-0 alert-danger">you must enter vaild age</p>
+
+
+
+            </div>
+
+            <label for="" class="mt-4">email:</label>
+            <input type="text" class=" form-control" formControlName="email" >
+            <p *ngIf='registerForm.controls.email.errors && registerForm.controls.email.touched' class="alert alert-danger"> enter valid email </p>
+    
+        
+            <label for="" class="mt-4">password:</label>
+            <input type="password" class="form-control" formControlName="password">
+            <p *ngIf='registerForm.controls.password.errors && registerForm.controls.password.touched' class="alert alert-danger"> enter valid email </p>
+
+    
+        <button type="submit" [disabled]='registerForm.invalid' class="btn btn-info   text-white mt-4 float-right">register</button>
+
+    </form>
+</div>

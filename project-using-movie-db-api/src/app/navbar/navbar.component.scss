@@ -1,0 +1,16 @@
+
+
+$lightBgColor:#24baef;
+$fontColor:#fff;
+
+$secondFontColor:#949cb0;
+
+.navbar-link{
+    color: $fontColor ;
+}
+.nav-link{
+    color: $secondFontColor !important;
+}
+.test{
+    color: $lightBgColor !important;
+}

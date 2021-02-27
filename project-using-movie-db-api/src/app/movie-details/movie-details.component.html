@@ -1,0 +1,28 @@
+<div class=" text-white container">
+
+    <div class=" row" >
+        <div class="col-md-6 mt-5">
+            <div>
+                <img class=" rounded w-100" src="https://image.tmdb.org/t/p/original/{{movieData?.backdrop_path}}"  alt="">
+            </div>
+        </div>
+        <div class=" col-md-6 mt-5">
+
+            <div class=" text-white">
+              <p>
+                  {{movieData?.title}}{{movieData?.name}}
+            </p> 
+
+            <button *ngFor="let x of movieData?.genres" class="btn btn-info mr-3">{{x.name}}</button>
+            
+
+            <p class=" text-muted mt-5">
+                {{movieData?.overview}}
+            </p> 
+                  
+            </div>
+        </div>
+
+    </div>
+
+</div>
